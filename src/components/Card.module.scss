@@ -1,0 +1,15 @@
+.card{
+    display: inline-block;
+    border: solid;
+    border-radius: 25px;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); // Elevate on hover
+    }
+
+}
+
+.cardleft{
+    display: inline-block;
+}
+
