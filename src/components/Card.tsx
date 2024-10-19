@@ -1,10 +1,10 @@
 "use client";
 
-import { Button, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { Button, Flex, Grid, Heading, IconButton, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import styles from './../components/Card.module.scss';
 
 interface ProjectCardProps {
-    github:boolean;
+    github: boolean;
     href: string;
     title: string;
     content: string;
@@ -28,45 +28,45 @@ export const Card: React.FC<ProjectCardProps> = ({
             <Flex
                 mobileDirection="column"
                 fillWidth paddingX="l" paddingTop="xs" paddingBottom="m" gap="l">
-                {title && (
-                    <Flex
-                        flex={5}
-                        className={styles.cardleft}
+                <Grid
+                    border="neutral-medium"
+                    columns="repeat(2, 1fr)"
+                    gap="xs"
+                    padding="xs"
+                    radius="l"
+                >
+                    {title && (
+                        <Flex
+                            flex={5}
+                            className={styles.cardleft}
                         >
-                        <Heading
-                            as="h3"
-                            wrap="balance"
-                            variant="display-strong-xs">
-                            {title}
-                        </Heading>
-                        {github?
-                        <>
-                             <Button
-                            href={href}
-                            prefixIcon="github" size="s" variant="tertiary" />
-                        </>
-                        :
-                        <>
-                             <Button
-                            href={href}
-                            prefixIcon="book" size="s" variant="tertiary" />
-                        </>
-                    
-                        }
-                                                <p>{content}</p>
-
-                   
-                    </Flex>
-                )}
-                {content && (
-                    <Flex
-                        flex={5}>
-                        <h4>  
-                    
-                        {description}
-                        </h4>
-                    </Flex>
-                )}
+                            <Heading
+                                as="h3"
+                                wrap="balance"
+                                variant="display-strong-xs">
+                                {title}
+                            </Heading>
+                            {github ?
+                                <Flex padding="xs">
+                                    <IconButton size="m" tooltip="click to see the project" icon="github" href={href} />
+                                </Flex>
+                                :
+                                <Flex padding="xs">
+                                    <IconButton size="m" tooltip="click to see the project" icon="book" href={href} />
+                                </Flex>
+                            }
+                            <Flex padding="xs">{content}</Flex>
+                        </Flex>
+                    )}
+                    {content && (
+                        <Flex
+                            flex={5}>
+                            <h4>
+                                {description}
+                            </h4>
+                        </Flex>
+                    )}
+                </Grid>
             </Flex>
         </Flex>
     );
