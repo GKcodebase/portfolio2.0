@@ -1,6 +1,6 @@
 {
-	"name": "@once-ui-system/nextjs-starter",
-	"version": "0.3.1",
+	"name": "protfolio2.o",
+	"version": "0.0.1",
 	"scripts": {
 		"dev": "next dev",
 		"export": "next export",
@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@floating-ui/react-dom": "^2.1.1",
+		"axios": "^1.7.7",
 		"classnames": "^2.5.1",
 		"next": "^14.2.4",
 		"postcss": "^8.4.39",
@@ -25,6 +26,7 @@
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
+		"eslint": "^9.13.0",
 		"postcss-custom-media": "^10.0.7",
 		"postcss-flexbugs-fixes": "^5.0.2",
 		"typescript": "^5"
