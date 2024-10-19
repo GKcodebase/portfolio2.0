@@ -2,15 +2,16 @@
 
 import React from 'react';
 
-import { Heading, Text, Flex, Button, Grid, Icon, InlineCode, Logo, Background, LetterFx } from '@/once-ui/components';
+import { Heading, Text, Flex, Button, Grid, Icon, Background, LetterFx, RevealFx, Avatar } from '@/once-ui/components';
 import Link from 'next/link';
-import { links, urls} from '../resource/content';
+import { home, links, urls, about, person } from '../resource/content';
+import SkillsAndCertifications from '@/components/SkillsAndCetificates';
 export default function Home() {
 	return (
 		<Flex
 			fillWidth paddingTop="l" paddingX="l"
 			direction="column" alignItems="center" flex={1}>
-			<Background/>
+			<Background />
 			<Flex
 				position="relative"
 				as="section" overflow="hidden"
@@ -19,40 +20,58 @@ export default function Home() {
 				<Flex
 					as="main"
 					direction="column" justifyContent="center"
-					fillWidth fillHeight padding="l" gap="l">
+					fillWidth fillHeight padding="l" gap="s">
 					<Flex
 						mobileDirection="column"
-						fillWidth gap="24">
+						fillWidth gap="m">
 						<Flex
 							position="relative"
-							flex={4} gap="24" marginBottom="104"
+							flex={4} gap="m" marginBottom="m"
 							direction="column">
-							<InlineCode
-								className="shadow-m"
-								style={{
-									width: 'fit-content',
-									padding: 'var(--static-space-8) var(--static-space-16)',
-									backdropFilter: 'blur(var(--static-space-1))'}}>
-								Start by editing <span className="brand-on-background-medium">app/page.tsx</span>
-							</InlineCode>
+
 							<Heading
 								wrap="balance"
 								variant="display-strong-s">
 								<span className="font-code">
 									<LetterFx
+									    speed="medium"
 										trigger="instant">
-										Helping designers code and developers design
+										Tech Innovator And Project Guru
 									</LetterFx>
 								</span>
 							</Heading>
-							<Button
-								href="https://once-ui.com/docs"
-								suffixIcon="chevronRight"
-								variant="secondary">
-								Read docs
-							</Button>
+							<RevealFx translateY="8" delay={0.4}>
+								<Text
+									wrap="balance"
+									onBackground="neutral-weak"
+									variant="body-default-l">
+									{home.subline}
+								</Text>
+							</RevealFx>
+							<RevealFx translateY="12" delay={0.5}>
+								<Button
+									data-border="rounded"
+									href={"about"}
+									variant="tertiary"
+									suffixIcon="chevronRight"
+									size="m">
+									<Flex
+										gap="m"
+										alignItems="center">
+										{about.avatar.display && (
+											<Avatar
+												style={{ marginLeft: '-0.75rem', marginRight: '0.25rem' }}
+												src={person.avatar}
+												size="m" />
+										)}
+										{about.title}
+									</Flex>
+								</Button>
+							</RevealFx>
+
 						</Flex>
 					</Flex>
+					<RevealFx   speed="slow" translateY={5} delay={1.5}>
 					<Grid
 						radius="l"
 						border="neutral-medium"
@@ -64,7 +83,7 @@ export default function Home() {
 						{links.map((link) => (
 							<Link
 								target="_blank"
-								style={{ padding: 'var(--responsive-space-l)' }}
+								style={{ padding: 'var(--responsive-space-m)' }}
 								key={link.href}
 								href={link.href}>
 								<Flex
@@ -77,7 +96,7 @@ export default function Home() {
 											variant="body-strong-m" onBackground="neutral-strong">
 											{link.title}
 										</Text>
-										<Icon size="s" name="arrowUpRight" />
+										<Icon size="s" name="openLink" />
 									</Flex>
 									<Text
 										variant="body-default-s" onBackground="neutral-weak">
@@ -87,6 +106,8 @@ export default function Home() {
 							</Link>
 						))}
 					</Grid>
+					<SkillsAndCertifications/>
+					</RevealFx>
 				</Flex>
 			</Flex>
 			<Flex
@@ -96,7 +117,7 @@ export default function Home() {
 				justifyContent="space-between">
 				<Text
 					variant="body-default-s" onBackground="neutral-weak">
-					© 2024 Once UI, <Link href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">MIT License</Link>
+					© 2024 G.K, <Link href="https://github.com/GKcodebase/portfolio2.0?tab=MIT-1-ov-file">MIT License</Link>
 				</Text>
 				<Flex
 					gap="12">
