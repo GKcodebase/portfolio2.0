@@ -4,7 +4,7 @@ import { FaJava, FaPython, FaJs, FaAws, FaDocker, FaGitAlt } from 'react-icons/f
 import { SiSpring, SiReact, SiAngular, SiKubernetes, SiJenkins, SiMongodb, SiMysql, SiPostgresql, SiApachekafka, SiApachespark, SiWalmart } from 'react-icons/si';
 import { skills, certifications } from '@/resource/content';
 import { Flex, Grid, Heading, Text } from '@/once-ui/components';
-
+//Components which will list all skils and certs in home pag
 const SkillsAndCertifications = () => {
 
     const getIcon = (skill: string) => {
@@ -35,7 +35,8 @@ const SkillsAndCertifications = () => {
             <Grid
                 border="neutral-medium"
                 borderStyle="solid-1"
-                columns="repeat(2, 1fr)"
+                columns="repeat(6, 1fr)"
+                tabletColumns="1col" mobileColumns="1col"
                 gap="m"
                 padding="m"
                 neutral-weak
@@ -43,7 +44,7 @@ const SkillsAndCertifications = () => {
             >
                 <>
                     <Heading as="h3" className="text-2xl font-bold mb-4">Skills</Heading>
-                    <Grid columns="repeat(3, 1fr)" gap="4">
+                    <Grid columns="repeat(3, 1fr)" tabletColumns="1col" mobileColumns="1col" gap="4">
                         {skills.map((skillCategory, index) => (
                             <Flex key={index} direction="column" className="mb-4">
                                 <Heading as="h3" className="text-xl font-semibold mb-2">{skillCategory.category}</Heading>
@@ -63,12 +64,12 @@ const SkillsAndCertifications = () => {
 
                 <>
                     <Heading as="h3" className="text-2xl font-bold mb-4">Certifications</Heading>
-                    <Grid columns="repeat(2, 1fr)" gap="4">
+                    <Grid columns="repeat(2, 1fr)" tabletColumns="1col" mobileColumns="1col" gap="4">
                         {certifications.map((cert, index) => (
                             <Flex key={index} direction="column" className="mb-4 p-4 border rounded shadow">
                                 <Heading as="h3" className="text-xl font-semibold">{cert.title}</Heading>
                                 <Text className="text-gray-600">{cert.issuer} - {cert.date}</Text>
-                                {cert.credentialId && <Text className="text-sm">Credential ID: {cert.credentialId}</Text>}
+                                {/* {cert.credentialId && <Text className="text-sm">Credential ID: {cert.credentialId}</Text>} */}
                                 <Text className="mt-2"><strong>Skills:</strong> {cert.skills.join(', ')}</Text>
                             </Flex>
                         ))}

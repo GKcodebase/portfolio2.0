@@ -10,7 +10,7 @@ interface ProjectCardProps {
     content: string;
     description: string;
 }
-
+// Card component to show projects and articles
 export const Card: React.FC<ProjectCardProps> = ({
     github,
     href,
@@ -21,16 +21,17 @@ export const Card: React.FC<ProjectCardProps> = ({
 
     return (
         <Flex
-            fillWidth gap="xl"
+            fillWidth gap="s"
             direction="column"
             className={styles.card}
         >
             <Flex
-                mobileDirection="column"
                 fillWidth paddingX="l" paddingTop="xs" paddingBottom="m" gap="l">
                 <Grid
                     border="neutral-medium"
                     columns="repeat(2, 1fr)"
+                    tabletColumns="1col"
+                    mobileColumns="1col"
                     gap="xs"
                     padding="xs"
                     radius="l"

@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-// Function to fetch data from both APIs
+/*
+  Function to fetch data from Github and Dev.io
+*/
 export async function fetchGithubAndDevData() {
   const projectsURL = 'https://api.github.com/users/GKcodebase/repos';
   const devURL = 'https://dev.to/api/articles?username=gokul_gk';
-  const itchUrl = 'https://itch.io/api/1/VXhPwiRkgWjRmZMnvP0P0KFAiKALLwMwKQvreyam/my-games';
-
   try {
     const [projectsResponse, devResponse] = await Promise.all([
       axios.get(projectsURL),
@@ -25,7 +25,9 @@ export async function fetchGithubAndDevData() {
     };
   }
 }
-
+/*
+  Function to fetch data from itch.io
+*/
 export async function fetchGameData() {
   const itchUrl = 'https://itch.io/api/1/VXhPwiRkgWjRmZMnvP0P0KFAiKALLwMwKQvreyam/my-games';
 
@@ -42,7 +44,7 @@ export async function fetchGameData() {
   });
 
   try {
-    const [ itchResponse] = await Promise.all([
+    const [itchResponse] = await Promise.all([
       axiosInstance.get(itchUrl)
     ]);
 

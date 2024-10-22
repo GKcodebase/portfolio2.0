@@ -2,7 +2,7 @@
 
 import { Background, Flex, Heading, SparkleFx } from '@/once-ui/components';
 import React from 'react';
-
+// Blog page
 export default function Blog() {
     return (
         <Flex

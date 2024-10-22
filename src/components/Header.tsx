@@ -6,24 +6,26 @@ import { Flex, ToggleButton } from "@/once-ui/components";
 import styles from '@/components/Header.module.scss';
 
 import { routes, display } from '../resource/config';
-import  { person, home, about, blog, projects } from '../resource/content';
+import { person, home, about, blog, projects } from '../resource/content';
 
+// Header to show Menu items 
 export const Header = () => {
     const pathname = usePathname() ?? '';
     return (
-        <Flex style={{height: 'fit-content'}}
+        <Flex style={{ height: 'fit-content' }}
             className={styles.position}
+            margin="l"
             as="header"
             zIndex={9}
-            fillWidth padding="8"
-            position="relative"
+            fillWidth padding="s"
+            mobileDirection="row"
             justifyContent="space-evenly">
             <Flex
                 hide="s"
-                paddingLeft="12" 
+                paddingLeft="12"
                 alignItems="left"
                 textVariant="body-default-s">
-                { display.location && (
+                {display.location && (
                     <>{person.location}</>
                 )}
             </Flex>
@@ -34,7 +36,7 @@ export const Header = () => {
                 <Flex
                     gap="4"
                     textVariant="body-default-s">
-                    { routes['/'] && (
+                    {routes['/'] && (
                         <ToggleButton
                             prefixIcon="home"
                             href={`/`}
@@ -42,7 +44,7 @@ export const Header = () => {
                             <Flex paddingX="2" hide="s">{home.label}</Flex>
                         </ToggleButton>
                     )}
-                    { routes['/about'] && (
+                    {routes['/about'] && (
                         <ToggleButton
                             prefixIcon="person"
                             href={"/about"}
@@ -50,7 +52,7 @@ export const Header = () => {
                             <Flex paddingX="2" hide="s">{about.label}</Flex>
                         </ToggleButton>
                     )}
-                    { routes['/projects'] && (
+                    {routes['/projects'] && (
                         <ToggleButton
                             prefixIcon="grid"
                             href={"/projects"}
@@ -58,7 +60,7 @@ export const Header = () => {
                             <Flex paddingX="2" hide="s">{projects.label}</Flex>
                         </ToggleButton>
                     )}
-                    { routes['/blog'] && (
+                    {routes['/blog'] && (
                         <ToggleButton
                             prefixIcon="book"
                             href={"/blog"}
@@ -69,7 +71,7 @@ export const Header = () => {
                 </Flex>
             </Flex>
             <Flex>
-                    
+
             </Flex>
         </Flex>
     )

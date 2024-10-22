@@ -1,3 +1,4 @@
+// Data to customise page
 export const links = [
     {
         href: "https://www.linkedin.com/in/gk-gokul/details/certifications/",
@@ -17,12 +18,12 @@ export const links = [
 ];
 
 export const urls = {
-    github :{
-        name :"github",
+    github: {
+        name: "github",
         url: "https://github.com/GKcodebase"
     },
-    linkedIn:{
-        name:"linkedIn",
+    linkedIn: {
+        name: "linkedIn",
         url: "https://www.linkedin.com/in/gk-gokul/"
     }
 }
@@ -30,14 +31,14 @@ import { InlineCode } from "@/once-ui/components";
 
 const person = {
     firstName: 'Gokul',
-    lastName:  'GopalaKrishnan Kumari Renuka (G.K) ',
+    lastName: 'GopalaKrishnan Kumari Renuka (G.K) ',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Software Developer',
-    avatar:    '/profile.jpg',
-    location:  'Dallas/Texas',        
-    languages: []  
+    role: 'Software Developer',
+    avatar: '/profile.jpg',
+    location: 'Dallas/Texas',
+    languages: []
 }
 
 const social = [
@@ -63,8 +64,8 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Sesoned developer and project Manager</>,
-    subline: <>I am a Software Development Engineer with over five years of experience at <InlineCode>Thermo Fisher Scientific</InlineCode> and <InlineCode>Walmart</InlineCode>, specializing in IoT and enterprise applications using technologies like Java, Next.js, and AWS.<br/>
-     Currently pursuing my <InlineCode>Master's</InlineCode> in Information Technology and Management at <InlineCode>UT Dallas</InlineCode>, I aim to become a technical program manager, bridging engineering and project teams.</>
+    subline: <>I am a Software Development Engineer with over five years of experience at <InlineCode>Thermo Fisher Scientific</InlineCode> and <InlineCode>Walmart</InlineCode>, specializing in IoT and enterprise applications using technologies like Java, Next.js, and AWS.<br />
+        Currently pursuing my <InlineCode>Master's</InlineCode> in Information Technology and Management at <InlineCode>UT Dallas</InlineCode>, I aim to become a technical program manager, bridging engineering and project teams.</>
 }
 
 const about = {
@@ -99,7 +100,7 @@ const about = {
                     <>&nbsp;&nbsp;&nbsp;3.As a scrum master at Walmart (an additional role taken for three quarters), led the team to increase velocity by 30%, reduced slippages, and was recognized with the BRAVO award.</>,
                     <>&nbsp;&nbsp;&nbsp;4.Worked with project managers, product owners, and business and engineering teams and streamlined scrum, agile processes, SDLC, and deliverables, reducing spillover by 20%</>
                 ],
-                images: [ 
+                images: [
                     {
                         src: '/walmart.gif',
                         alt: 'Walmart India',
@@ -142,12 +143,12 @@ const about = {
                         height: 9
                     }
 
-                 ]
+                ]
             }
         ]
     },
     education: {
-        display: true, 
+        display: true,
         title: 'Education',
         institutions: [
             {
@@ -169,7 +170,7 @@ const about = {
 
 const blog = {
     label: 'Blog',
-    title: 'Writing about design and tech...',  
+    title: 'Writing about design and tech...',
 }
 
 const projects = {
@@ -199,64 +200,64 @@ export const structure = [
 
 export const skills = [
     { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C", "C++", "NodeJs", "SQL", "HTML", "CSS", "R"] },
-    { category: "Frameworks and Libraries", items: ["Spring Boot", "React", "Angular", "Kafka", "Spark", "Hive", "Hibernate", "Jax-Rs"] },
-    { category: "Cloud Platforms", items: ["AWS", "Azure", "Walmart cloud-native platform"] },
-    { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "Git", "Github", "CI/CD"] },
     { category: "APIs", items: ["RESTful APIs"] },
+    { category: "Frameworks and Libraries", items: ["Spring Boot", "React", "Angular", "Kafka", "Spark", "Hive", "Hibernate", "Jax-Rs"] },
+    { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "Git", "Github", "CI/CD"] },
     { category: "Databases", items: ["MySQL", "PostgreSQL", "MongoDB", "H2", "Amazon DynamoDB", "Azure Cosmos"] },
     { category: "Software Development Methodologies", items: ["Agile", "Scrum", "Jira", "Project management"] },
     { category: "Testing and Debugging", items: ["JUnit", "Selenium", "JMeter", "Performance Testing", "Postman", "Debugging", "Manual Testing"] },
+    { category: "Cloud Platforms", items: ["AWS", "Azure", "Walmart cloud-native platform"] },
     { category: "Soft Skills", items: ["Communication", "Teamwork", "Problem-Solving", "Adaptability", "Team Management", "Attention to Detail", "Critical Thinking", "Creativity", "Innovation"] }
-  ];
+];
 
-  export const certifications = [
+export const certifications = [
     {
-      title: "Google Project Management",
-      issuer: "Google",
-      date: "Jul 2024",
-      credentialId: "BEVAXXFRJWQD",
-      skills: ["Project Documentation", "Project Management Software", "Agile Project Management", "Agile Methodologies", "Microsoft Excel", "Cost-Benefit Analysis", "Capacity Planning", "Planning & Scheduling", "Engineering Management"],
+        title: "Google Project Management",
+        issuer: "Google",
+        date: "Jul 2024",
+        credentialId: "BEVAXXFRJWQD",
+        skills: ["Project Documentation", "Project Management Software", "Agile Project Management", "Agile Methodologies", "Microsoft Excel", "Cost-Benefit Analysis", "Capacity Planning", "Planning & Scheduling", "Engineering Management"],
     },
     {
-      title: "Architecting Solutions on AWS",
-      issuer: "Amazon Web Services (AWS)",
-      date: "Jun 2024",
-      credentialId: "ZFNEA9PNY24E",
-      skills: ["Cloud Computing", "Amazon Web Services (AWS)"],
+        title: "Architecting Solutions on AWS",
+        issuer: "Amazon Web Services (AWS)",
+        date: "Jun 2024",
+        credentialId: "ZFNEA9PNY24E",
+        skills: ["Cloud Computing", "Amazon Web Services (AWS)"],
     },
     {
-      title: "AWS Cloud Technical Essentials",
-      issuer: "Amazon Web Services (AWS)",
-      date: "Apr 2024",
-      credentialId: "N3RDMDRBV45W",
-      skills: ["Software Design", "Amazon Web Services (AWS)"],
+        title: "AWS Cloud Technical Essentials",
+        issuer: "Amazon Web Services (AWS)",
+        date: "Apr 2024",
+        credentialId: "N3RDMDRBV45W",
+        skills: ["Software Design", "Amazon Web Services (AWS)"],
     },
     {
-      title: "Next.js - The ultimate way to build React apps",
-      issuer: "Educative",
-      date: "Mar 2023",
-      credentialId: "lp31Gmn3v0xFk7qWpvXrPLIgQ6mg8QjXqFM",
-      skills: ["UI devlopment", "Next.js"],
+        title: "Next.js - The ultimate way to build React apps",
+        issuer: "Educative",
+        date: "Mar 2023",
+        credentialId: "lp31Gmn3v0xFk7qWpvXrPLIgQ6mg8QjXqFM",
+        skills: ["UI devlopment", "Next.js"],
     },
     {
-      title: "Apache Kafka Essential Training: Getting Started",
-      issuer: "LinkedIn",
-      date: "Nov 2022",
-      skills: [ "Apache Kafka"]
+        title: "Apache Kafka Essential Training: Getting Started",
+        issuer: "LinkedIn",
+        date: "Nov 2022",
+        skills: ["Apache Kafka"]
     },
     {
-      title: "Artificial Intelligence A-Z™: Learn How To Build An AI",
-      issuer: "Noble Work Foundation",
-      date: "Jul 2022",
-      credentialId: "UC-557fe056-ab02-4875-b170-01f87d420583",
-      skills: ["Artificial Intelligence (AI)"],
+        title: "Artificial Intelligence A-Z™: Learn How To Build An AI",
+        issuer: "Noble Work Foundation",
+        date: "Jul 2022",
+        credentialId: "UC-557fe056-ab02-4875-b170-01f87d420583",
+        skills: ["Artificial Intelligence (AI)"],
     },
     {
-      title: "Deep Learning Specialization",
-      issuer: "DeepLearning.AI",
-      credentialId: "4f8c3cffcacbdf9de7f3b9cdc3eacaf2",
-      skills: ["Deep Learning"],
+        title: "Deep Learning Specialization",
+        issuer: "DeepLearning.AI",
+        credentialId: "4f8c3cffcacbdf9de7f3b9cdc3eacaf2",
+        skills: ["Deep Learning"],
     }
-  ];
+];
 
 

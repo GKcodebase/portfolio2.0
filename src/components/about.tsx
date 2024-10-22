@@ -3,7 +3,7 @@
 import React from 'react';
 import { Flex, Text } from '@/once-ui/components';
 import styles from './about.module.scss';
-
+// Components to show index
 interface AboutProps
  {
     structure: {

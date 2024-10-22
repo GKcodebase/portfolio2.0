@@ -3,10 +3,10 @@
     top: 0;
 }
 
-@media (--s) {
+@media (max-width: 600px) { 
     .position {
         top: auto;
-        position: fixed;
+        position: sticky; 
         bottom: var(--static-space-24);
     }
 }

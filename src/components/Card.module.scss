@@ -1,5 +1,5 @@
 .card{
-    display: inline-block;
+    display: inline-block !important;
     border: solid;
     border-radius: 25px;
     &:hover {
@@ -10,6 +10,6 @@
 }
 
 .cardleft{
-    display: inline-block;
+    display: inline-block !important;
 }
 

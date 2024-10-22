@@ -7,6 +7,7 @@ import { baseURL } from '@/resource/config';
 import React from 'react';
 import styles from '../../components/about.module.scss';
 
+// About page 
 export default function AboutPage(
     { }
 ) {
@@ -21,6 +22,7 @@ export default function AboutPage(
                 margin="l"
                 position="relative"
             >
+                {/* Script to configure appendix inline navigation */}
                 <script
                     type="application/ld+json"
                     suppressHydrationWarning
@@ -58,40 +60,40 @@ export default function AboutPage(
                     fillWidth
                     padding="xl"
                     mobileDirection="column" justifyContent="center">
-                    <RevealFx   speed="fast" translateY={5} delay={0.1}>
-                    {about.avatar.display && (
-                        <Flex
-                            minWidth="xs" paddingX="l" paddingBottom="xl" gap="m"
-                            direction="column" alignItems="center"
-                        >
-                            <Avatar
-                                src={person.avatar}
-                                size="xl" />
+                    <RevealFx speed="fast" translateY={5} delay={0.1}>
+                        {about.avatar.display && (
                             <Flex
-                                gap="8"
-                                alignItems="center">
-                                <Icon
-                                    onBackground="accent-weak"
-                                    name="globe" />
-                                {person.location}
-                            </Flex>
-                            {person.languages.length > 0 && (
+                                minWidth="xs" paddingX="l" paddingBottom="xl" gap="m"
+                                direction="column" alignItems="center"
+                            >
+                                <Avatar
+                                    src={person.avatar}
+                                    size="xl" />
                                 <Flex
-                                    wrap
-                                    gap="8">
-                                    {person.languages.map((language, index) => (
-                                        <Tag
-                                            key={index}
-                                            size="l">
-                                            {language}
-                                        </Tag>
-                                    ))}
+                                    gap="8"
+                                    alignItems="center">
+                                    <Icon
+                                        onBackground="accent-weak"
+                                        name="globe" />
+                                    {person.location}
                                 </Flex>
-                            )}
-                        </Flex>
-                    )}
+                                {person.languages.length > 0 && (
+                                    <Flex
+                                        wrap
+                                        gap="8">
+                                        {person.languages.map((language, index) => (
+                                            <Tag
+                                                key={index}
+                                                size="l">
+                                                {language}
+                                            </Tag>
+                                        ))}
+                                    </Flex>
+                                )}
+                            </Flex>
+                        )}
                     </RevealFx>
-                    <RevealFx   speed="fast" translateY={12} delay={0.05}>
+                    <RevealFx speed="fast" translateY={12} delay={0.05}>
                         <Flex
                             className={styles.blockAlign}
                             fillWidth flex={9} maxWidth="l" direction="column"

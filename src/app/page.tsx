@@ -6,6 +6,7 @@ import { Heading, Text, Flex, Button, Grid, Icon, Background, LetterFx, RevealFx
 import Link from 'next/link';
 import { home, links, urls, about, person } from '../resource/content';
 import SkillsAndCertifications from '@/components/SkillsAndCetificates';
+// Landing Page - Home
 export default function Home() {
 	return (
 		<Flex
@@ -13,7 +14,6 @@ export default function Home() {
 			direction="column" alignItems="center" flex={1}>
 			<Background />
 			<Flex
-				position="relative"
 				as="section" overflow="hidden"
 				fillWidth minHeight="0" maxWidth={68}
 				direction="column" alignItems="center" flex={1}>
@@ -34,7 +34,7 @@ export default function Home() {
 								variant="display-strong-s">
 								<span className="font-code">
 									<LetterFx
-									    speed="medium"
+										speed="medium"
 										trigger="instant">
 										Tech Innovator And Project Guru
 									</LetterFx>
@@ -71,42 +71,42 @@ export default function Home() {
 
 						</Flex>
 					</Flex>
-					<RevealFx   speed="slow" translateY={5} delay={1.5}>
-					<Grid
-						radius="l"
-						border="neutral-medium"
-						borderStyle="solid-1"
-						columns="repeat(3, 1fr)"
-						tabletColumns="1col"
-						mobileColumns="1col"
-						fillWidth>
-						{links.map((link) => (
-							<Link
-								target="_blank"
-								style={{ padding: 'var(--responsive-space-m)' }}
-								key={link.href}
-								href={link.href}>
-								<Flex
-									fillWidth paddingY="8" gap="8"
-									direction="column">
+					<RevealFx speed="slow" translateY={5} delay={1.5}>
+						<Grid
+							radius="l"
+							border="neutral-medium"
+							borderStyle="solid-1"
+							columns="repeat(3, 1fr)"
+							tabletColumns="1col"
+							mobileColumns="1col"
+							fillWidth>
+							{links.map((link) => (
+								<Link
+									target="_blank"
+									style={{ padding: 'var(--responsive-space-m)' }}
+									key={link.href}
+									href={link.href}>
 									<Flex
-										fillWidth gap="12"
-										alignItems="center">
+										fillWidth paddingY="8" gap="8"
+										direction="column">
+										<Flex
+											fillWidth gap="12"
+											alignItems="center">
+											<Text
+												variant="body-strong-m" onBackground="neutral-strong">
+												{link.title}
+											</Text>
+											<Icon size="s" name="openLink" />
+										</Flex>
 										<Text
-											variant="body-strong-m" onBackground="neutral-strong">
-											{link.title}
+											variant="body-default-s" onBackground="neutral-weak">
+											{link.description}
 										</Text>
-										<Icon size="s" name="openLink" />
 									</Flex>
-									<Text
-										variant="body-default-s" onBackground="neutral-weak">
-										{link.description}
-									</Text>
-								</Flex>
-							</Link>
-						))}
-					</Grid>
-					<SkillsAndCertifications/>
+								</Link>
+							))}
+						</Grid>
+						<SkillsAndCertifications />
 					</RevealFx>
 				</Flex>
 			</Flex>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Background, Flex, Grid, Heading, Icon, SparkleFx, Spinner } from '@/once-ui/components';
+import { Background, Flex, Grid, Heading, Spinner } from '@/once-ui/components';
 import React, { Fragment, useEffect, useState } from 'react';
 import { fetchGameData, fetchGithubAndDevData } from '../api/projects';
 import { Card } from '@/components/Card';
@@ -16,7 +16,7 @@ export default function Projects({ }) {
                 const result = await fetchGithubAndDevData();
                 setData(result);
 
-                // Fetch data from itch.io API route
+                // Fetch data from itch.io API route - under development
                 const response = await fetchGameData();
                 console.log('Itch.io data:', response);
 
@@ -40,6 +40,8 @@ export default function Projects({ }) {
                 justifyContent="center"
                 fillWidth
                 fillHeight
+                tabletDirection="row"
+                mobileDirection="row"
                 alignItems="center"
                 padding="l"
                 gap="l"
@@ -47,12 +49,11 @@ export default function Projects({ }) {
                 <Spinner size="xl" />
             </Flex>
                 :
-                <Flex>
+                <Flex style={{ display: "inline-grid" }}>
                     <Flex
                         as="main"
                         direction="column"
                         justifyContent="center"
-                        fillWidth
                         fillHeight
                         padding="l"
                         gap="l"
@@ -76,10 +77,11 @@ export default function Projects({ }) {
                             </Heading>
                             <Grid
                                 border="brand-medium"
-                                columns="repeat(3, minmax(250px, 1fr))"
-                                gap="xl"
+                                columns="repeat(3, 1fr)"
+                                tabletColumns="2col"
+                                mobileColumns="1col"
+                                gap="l"
                                 padding="l"
-                                fillWidth
                             >
                                 {data.projects.map((project) => (
                                     <Card
