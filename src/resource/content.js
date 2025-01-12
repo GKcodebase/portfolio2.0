@@ -8,12 +8,12 @@ export const links = [
     {
         href: "https://www.linkedin.com/in/gk-gokul/overlay/contact-info/",
         title: "Contact",
-        description: "Contact Channels",
+        description: "gokulgk1200@gmail.com",
     },
     {
         href: "/Gokul_SDE.pdf",
         title: "Resume",
-        description: "More about me.",
+        description: "Latest Resume.",
     },
 ];
 
@@ -37,7 +37,7 @@ const person = {
     },
     role: 'Software Developer',
     avatar: '/profile.jpg',
-    location: 'Dallas/Texas',
+    location: '',
     languages: []
 }
 
@@ -64,8 +64,8 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Sesoned developer and project Manager</>,
-    subline: <>I am a Software Development Engineer with over five years of experience at <InlineCode>Thermo Fisher Scientific</InlineCode> and <InlineCode>Walmart</InlineCode>, specializing in IoT and enterprise applications using technologies like Java, Next.js, and AWS.<br />
-        Currently pursuing my <InlineCode>Master's</InlineCode> in Information Technology and Management at <InlineCode>UT Dallas</InlineCode>, I aim to become a technical program manager, bridging engineering and project teams.</>
+    subline: <>Software Development Engineer with 5 years of experience at <InlineCode>Thermo Fisher Scientific</InlineCode> and <InlineCode>Walmart</InlineCode>.<br />
+        Currently pursuing my <InlineCode>Master's</InlineCode> in IT Management at <InlineCode>UT Dallas</InlineCode>,hoping to become a technical program manager, bridging engineering,business and project teams.</>
 }
 
 const about = {
@@ -90,7 +90,7 @@ const about = {
         experiences: [
             {
                 company: 'Walmart',
-                timeframe: 'July 2022 - September 2022',
+                timeframe: 'July 2022 - September 2024',
                 role: 'Software Devlopment Enginner 3',
                 location: 'Bengaluru, India',
                 achievements: [
@@ -165,6 +165,10 @@ const about = {
                 location: 'Calicut, India'
             }
         ]
+    },
+    skills:{
+        display: true,
+        title: 'Skills and Certifications',
     }
 }
 
@@ -195,16 +199,20 @@ export const structure = [
         title: about.work.title,
         display: about.work.display,
         items: about.work.experiences.map(experience => experience.company)
+    },{
+        title: about.skills.title,
+        display: about.skills.display,
+        items:[] 
     }
 ];
 
 export const skills = [
     { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C", "C++", "NodeJs", "SQL", "HTML", "CSS", "R"] },
-    { category: "APIs", items: ["RESTful APIs"] },
+    { category: "APIs", items: ["RESTful APIs","Fast API"] },
     { category: "Frameworks and Libraries", items: ["Spring Boot", "React", "Angular", "Kafka", "Spark", "Hive", "Hibernate", "Jax-Rs"] },
-    { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "Git", "Github", "CI/CD"] },
+    { category: "DevOps Tools", items: ["Docker", "Kubernetes", "Jenkins", "Git", "Github", "CI/CD" ,"Promethus","Grafana"] },
     { category: "Databases", items: ["MySQL", "PostgreSQL", "MongoDB", "H2", "Amazon DynamoDB", "Azure Cosmos"] },
-    { category: "Software Development Methodologies", items: ["Agile", "Scrum", "Jira", "Project management"] },
+    { category: "Software Development Methodologies", items: ["Agile", "Scrum", "Jira", "Project management" ,"MS Project"] },
     { category: "Testing and Debugging", items: ["JUnit", "Selenium", "JMeter", "Performance Testing", "Postman", "Debugging", "Manual Testing"] },
     { category: "Cloud Platforms", items: ["AWS", "Azure", "Walmart cloud-native platform"] },
     { category: "Soft Skills", items: ["Communication", "Teamwork", "Problem-Solving", "Adaptability", "Team Management", "Attention to Detail", "Critical Thinking", "Creativity", "Innovation"] }

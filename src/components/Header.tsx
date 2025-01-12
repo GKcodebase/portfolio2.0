@@ -54,7 +54,7 @@ export const Header = () => {
                     )}
                     {routes['/projects'] && (
                         <ToggleButton
-                            prefixIcon="grid"
+                            prefixIcon="nut"
                             href={"/projects"}
                             selected={pathname.startsWith('/projects')}>
                             <Flex paddingX="2" hide="s">{projects.label}</Flex>

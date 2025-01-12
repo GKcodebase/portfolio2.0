@@ -5,7 +5,6 @@ import React from 'react';
 import { Heading, Text, Flex, Button, Grid, Icon, Background, LetterFx, RevealFx, Avatar } from '@/once-ui/components';
 import Link from 'next/link';
 import { home, links, urls, about, person } from '../resource/content';
-import SkillsAndCertifications from '@/components/SkillsAndCetificates';
 // Landing Page - Home
 export default function Home() {
 	return (
@@ -106,7 +105,6 @@ export default function Home() {
 								</Link>
 							))}
 						</Grid>
-						<SkillsAndCertifications />
 					</RevealFx>
 				</Flex>
 			</Flex>

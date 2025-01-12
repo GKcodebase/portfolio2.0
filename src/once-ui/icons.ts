@@ -28,7 +28,8 @@ import {
 	PiGridFourDuotone,
 	PiHouseDuotone,
 	PiBookBookmarkDuotone,
-	PiMailboxDuotone
+	PiMailboxDuotone,
+	PiNutBold
 } from "react-icons/pi";
 
 export const iconLibrary: Record<string, IconType> = {
@@ -53,5 +54,6 @@ export const iconLibrary: Record<string, IconType> = {
 	discord: FaDiscord,
 	github: FaGithub,
 	linkedIn: FaLinkedin,
-	email: PiMailboxDuotone
+	email: PiMailboxDuotone,
+	nut:PiNutBold
 };

@@ -2,25 +2,22 @@
 
 import { Background, Flex, Grid, Heading, Spinner } from '@/once-ui/components';
 import React, { Fragment, useEffect, useState } from 'react';
-import { fetchGameData, fetchGithubAndDevData } from '../api/projects';
+import { fetchGithubAndDevData } from '../api/projects';
 import { Card } from '@/components/Card';
 const Project: { id: number, clone_url: string, name: string, description: string, language: string }[] = []
-const Articles: { id: number, url: string, name: string, description: string, title: string, tags: string }[] = []
 export default function Projects({ }) {
-    const [data, setData] = useState({ projects: Project, articles: Articles });
+    const [projects, setProjects] = useState(Project);
     const [isLoading, setIsLoading] = useState(true);
+    const showList = ["2DShooter", "Angular-Components-and-projects", "AWS-Example-Snippets", "datacollector", "Design", "devika", "DSA", "EduAssistant", "Java", "Machine_Learning", "NLP-application-in-indian-Judiciary", "portfolio2.0", "Prometheus-and-grafana", "SolarSystemSimulator", "Top100JAVA"];
 
     useEffect(() => {
         async function loadData() {
             try {
                 const result = await fetchGithubAndDevData();
-                setData(result);
-
-                // Fetch data from itch.io API route - under development
-                const response = await fetchGameData();
-                console.log('Itch.io data:', response);
-
-
+                const filteredProjects = result.projects.filter((project: { name: { toString: () => string; }; }) =>
+                    showList.includes(project.name.toString()) // Convert project.id to string for comparison
+                );
+                setProjects(filteredProjects);
             } catch (error) {
                 console.error('Error loading data:', error);
             } finally {
@@ -83,7 +80,7 @@ export default function Projects({ }) {
                                 gap="l"
                                 padding="l"
                             >
-                                {data.projects.map((project) => (
+                                {projects.map((project) => (
                                     <Card
                                         key={project.id}
                                         github={true}
@@ -96,42 +93,6 @@ export default function Projects({ }) {
                             </Grid>
                         </Flex>
 
-                        {/* Articles Section */}
-                        <Flex
-                            as="section"
-                            direction="column"
-                            alignItems="center"
-                            flex={1}
-                            padding="l"
-                            gap="xl"
-                            position="relative"
-                        >
-                            <Heading
-                                as="h1"
-                                wrap="balance"
-                                variant="display-strong-xs"
-                            >
-                                Articles
-                            </Heading>
-                            <Grid
-                                border="brand-medium"
-                                columns="repeat(2, minmax(300px, 1fr))"
-                                gap="xl"
-                                padding="l"
-                                fillWidth
-                            >
-                                {data.articles.map((article) => (
-                                    <Card
-                                        key={article.id}
-                                        github={false}
-                                        href={article.url}
-                                        title={article.title}
-                                        description={article.description}
-                                        content={article.tags}
-                                    />
-                                ))}
-                            </Grid>
-                        </Flex>
                     </Flex>
                 </Flex>
             }

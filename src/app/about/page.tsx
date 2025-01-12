@@ -6,6 +6,7 @@ import { person, social, about, structure } from '@/resource/content';
 import { baseURL } from '@/resource/config';
 import React from 'react';
 import styles from '../../components/about.module.scss';
+import SkillsAndCertifications from '@/components/SkillsAndCetificates';
 
 // About page 
 export default function AboutPage(
@@ -263,6 +264,16 @@ export default function AboutPage(
                                 </>
                             )}
                         </Flex>
+                        <Flex>
+                            <Heading
+                                as="h2"
+                                id={about.skills.title}
+                                variant="display-strong-s"
+                                marginBottom="m">
+                                {about.skills.title}
+                            </Heading>
+                        </Flex>
+                        <SkillsAndCertifications />
                     </RevealFx>
                 </Flex>
             </Flex>
